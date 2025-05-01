@@ -155,9 +155,10 @@
                                     <div class="product-box product-box-bg wow fadeInUp ">
                                         <div class="product-image">
                                             <a href="{{ route('product.details', ['id' => $product->id]) }}">
-                                                <img src="{{ asset('storage/images/' . rawurlencode($product->image_code)) }}"
+                                                <img src="{{ asset('storage/images/' . $product->image_code) }}"
                                                      class="img-fluid"
                                                      alt="{{ $product->name ?? 'Product Image' }}">
+
 
                                             </a>
 
