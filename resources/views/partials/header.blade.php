@@ -220,8 +220,9 @@
                                                 <li class="product-box-contain">
                                                     <div class="drop-cart">
                                                         <a class="drop-image">
-                                                            <img src="../assets/images/vape/products/productx.webp"
-                                                                 class="img-fluid blur-up lazyload" alt="">
+                                                            <img src="{{ asset('storage/images/' . $product->image_code) }}"
+                                                                 class="img-fluid"
+                                                                 alt="{{ $product->name ?? 'Product Image' }}">
                                                         </a>
 
                                                         <div class="drop-contain">

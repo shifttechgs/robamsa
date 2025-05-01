@@ -51,14 +51,15 @@
                                     <tr class="product-box-contain">
                                         <td class="product-detail">
                                             <div class="product border-0">
-                                                <a href="product-left-thumbnail.html" class="product-image">
-                                                    <img src="../assets/images/vape/products/productx.webp"
-                                                         class="img-fluid blur-up lazyload" alt="">
+                                                <a  class="product-image">
+                                                    <img src="{{ asset('storage/images/' . $product->image_code) }}"
+                                                         class="img-fluid"
+                                                         alt="{{ $product->name ?? 'Product Image' }}">
                                                 </a>
                                                 <div class="product-detail">
                                                     <ul>
                                                         <li class="name">
-                                                            <a href="product-left-thumbnail.html">{{ $products['name'] }}</a>
+                                                            <a>{{ $products['name'] }}</a>
                                                         </li>
 
 
