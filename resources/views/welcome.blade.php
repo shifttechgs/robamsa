@@ -155,8 +155,9 @@
                                     <div class="product-box product-box-bg wow fadeInUp ">
                                         <div class="product-image">
                                             <a href="{{ route('product.details', ['id' => $product->id]) }}">
-                                                <img src="../assets/images/vape/products/productx.png"
-                                                     class="img-fluid blur-up lazyload" alt="">
+                                                <img src="{{ asset('storage/' . $product->image_code) }}" id="img-1"
+                                                     data-zoom-image="{{ asset('storage/' . $product->image_code) }}"
+                                                     class="img-fluid image_zoom_cls-0 blur-up lazyload" alt="">
                                             </a>
 
                                         </div>
