@@ -51,15 +51,15 @@
                                     <tr class="product-box-contain">
                                         <td class="product-detail">
                                             <div class="product border-0">
-                                                <a  class="product-image">
-                                                    <img src="{{ asset('storage/images/' . $product->image_code) }}"
+                                                <a href="" class="product-image">
+                                                    <img src="{{ asset('storage/images/' . $products['image']) }}"
                                                          class="img-fluid"
-                                                         alt="{{ $product->name ?? 'Product Image' }}">
+                                                         alt="{{ $products->name ?? 'Product Image' }}">
                                                 </a>
                                                 <div class="product-detail">
                                                     <ul>
                                                         <li class="name">
-                                                            <a>{{ $products['name'] }}</a>
+                                                            <a href="product-left-thumbnail.html">{{ $products['name'] }}</a>
                                                         </li>
 
 

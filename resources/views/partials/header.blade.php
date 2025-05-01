@@ -220,9 +220,9 @@
                                                 <li class="product-box-contain">
                                                     <div class="drop-cart">
                                                         <a class="drop-image">
-                                                            <img src="{{ asset('storage/images/' . $product->image_code) }}"
+                                                            <img src="{{ asset('storage/images/' . $products['image']) }}"
                                                                  class="img-fluid"
-                                                                 alt="{{ $product->name ?? 'Product Image' }}">
+                                                                 alt="{{ $products->name ?? 'Product Image' }}">
                                                         </a>
 
                                                         <div class="drop-contain">
