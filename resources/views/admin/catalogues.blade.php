@@ -119,7 +119,7 @@
 {{--                                                    </div>--}}
                                                     <div
                                                         class="avatar-sm bg-light rounded p-1 me-2">
-                                                        <img src="{{ asset('storage/' . $product->image_code) }}"
+                                                        <img src="{{ asset('storage/images/' . $product->image_code) }}"
                                                              alt="" class="img-fluid d-block" />
                                                     </div>
                                                 </td>
