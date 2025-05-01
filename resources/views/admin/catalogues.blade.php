@@ -46,13 +46,13 @@
                                             {{--                                                </div>--}}
                                             {{--                                            </div>--}}
                                             <div class="d-flex gap-2">
-                                                <div class="edit">
-                                                    <button class="btn btn-sm btn-success edit-item-btn"
-                                                            data-bs-toggle="modal" data-bs-target="#showCatalogueModal"><i class="ri-upload-cloud-2-fill align-bottom me-1"></i>Import</button>
-                                                </div>
-                                                <div class="remove">
-                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><i class="ri-download-cloud-2-fill align-bottom me-1"></i>Export</button>
-                                                </div>
+{{--                                                <div class="edit">--}}
+{{--                                                    <button class="btn btn-sm btn-success edit-item-btn"--}}
+{{--                                                            data-bs-toggle="modal" data-bs-target="#showCatalogueModal"><i class="ri-upload-cloud-2-fill align-bottom me-1"></i>Import</button>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="remove">--}}
+{{--                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><i class="ri-download-cloud-2-fill align-bottom me-1"></i>Export</button>--}}
+{{--                                                </div>--}}
                                                 <div class="remove">
                                                     <button class="btn btn-sm btn-primary remove-item-btn" data-bs-toggle="modal" data-bs-target="#showCatalogueModal"><i class="ri-add-line align-bottom me-1"></i>New Product</button>
                                                 </div>
@@ -160,7 +160,6 @@
                                                                        colors="primary:#121331,secondary:#08a88a" style="width:75px;height:75px">
                                                             </lord-icon>
                                                             <h5 class="mt-2">Sorry! No Result Found</h5>
-                                                            <p class="text-muted mb-0">We've searched more than 150+ Orders but we did not find any orders matching your search.</p>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -168,15 +167,17 @@
 
                                             </tbody>
                                         </table>
+                                        <div class="d-flex justify-content-end">
+                                            <div class="pagination-wrap hstack gap-2">
 
-                                    </div>
-
-                                    <div class="d-flex justify-content-end">
-                                        <div class="pagination-wrap hstack gap-2">
-
-                                            {{ $products->links() }}
+                                                {{ $products->links() }}
+                                            </div>
                                         </div>
+
+
                                     </div>
+
+
                                 </div>
                             </div><!-- end card -->
                         </div>

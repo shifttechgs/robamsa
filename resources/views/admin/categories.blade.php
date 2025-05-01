@@ -8,13 +8,13 @@
 
         <div class="page-content">
             <div class="container-fluid">
-{{--                @if(session('success'))--}}
-{{--                    <div class="alert alert-success">{{ session('success') }}</div>--}}
-{{--                @endif--}}
+                {{--                @if(session('success'))--}}
+                {{--                    <div class="alert alert-success">{{ session('success') }}</div>--}}
+                {{--                @endif--}}
 
-{{--                @if(session('error'))--}}
-{{--                    <div class="alert alert-danger">{{ session('error') }}</div>--}}
-{{--                @endif--}}
+                {{--                @if(session('error'))--}}
+                {{--                    <div class="alert alert-danger">{{ session('error') }}</div>--}}
+                {{--                @endif--}}
                 <!-- start page title -->
                 <div class="row">
                     <div class="col-12">
@@ -46,21 +46,24 @@
                                     </div>
                                     <div class="col-sm">
                                         <div class="d-flex justify-content-sm-end">
-{{--                                            <div class="col-sm-auto">--}}
-{{--                                                <div>--}}
-{{--                                                    <button type="button" class="btn btn-success add-btn" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal"><i class="ri-add-line align-bottom me-1"></i> New Category</button>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
+                                            {{--                                            <div class="col-sm-auto">--}}
+                                            {{--                                                <div>--}}
+                                            {{--                                                    <button type="button" class="btn btn-success add-btn" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal"><i class="ri-add-line align-bottom me-1"></i> New Category</button>--}}
+                                            {{--                                                </div>--}}
+                                            {{--                                            </div>--}}
                                             <div class="d-flex gap-2">
-                                                <div class="edit">
-                                                    <button class="btn btn-sm btn-success edit-item-btn"
-                                                            data-bs-toggle="modal" data-bs-target="#showModal"><i class="ri-add-line align-bottom me-1"></i>Import</button>
-                                                </div>
+                                                {{--                                                <div class="edit">--}}
+                                                {{--                                                    <button class="btn btn-sm btn-success edit-item-btn"--}}
+                                                {{--                                                            data-bs-toggle="modal" data-bs-target="#showModal"><i class="ri-add-line align-bottom me-1"></i>Import</button>--}}
+                                                {{--                                                </div>--}}
+                                                {{--                                                <div class="remove">--}}
+                                                {{--                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><i class="ri-add-line align-bottom me-1"></i>Export</button>--}}
+                                                {{--                                                </div>--}}
                                                 <div class="remove">
-                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><i class="ri-add-line align-bottom me-1"></i>Export</button>
-                                                </div>
-                                                <div class="remove">
-                                                    <button class="btn btn-sm btn-primary remove-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><i class="ri-add-line align-bottom me-1"></i>New Category</button>
+                                                    <button class="btn btn-sm btn-primary remove-item-btn"
+                                                            data-bs-toggle="modal" data-bs-target="#showModal"><i
+                                                            class="ri-add-line align-bottom me-1"></i>New Category
+                                                    </button>
                                                 </div>
                                             </div>
 
@@ -76,7 +79,8 @@
                                         <div class="mb-2">
                                             <div class="search-box">
                                                 <form method="GET" action="{{ route('categories.index') }}">
-                                                    <input class="search form-control" placeholder="Search" name="search" value="{{ request('search') }}" />
+                                                    <input class="search form-control" placeholder="Search"
+                                                           name="search" value="{{ request('search') }}"/>
                                                     <i class="ri-search-line search-icon"></i>
                                                 </form>
                                             </div>
@@ -89,7 +93,8 @@
                                             <tr>
                                                 <th scope="col" style="width: 50px;">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="checkAll" value="option">
+                                                        <input class="form-check-input" type="checkbox" id="checkAll"
+                                                               value="option">
                                                     </div>
                                                 </th>
                                                 <th class="sort" data-sort="category_name">Category Name</th>
@@ -105,10 +110,13 @@
                                                 <tr>
                                                     <th scope="row">
                                                         <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" name="checkAll" value="option1">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                   name="checkAll" value="option1">
                                                         </div>
                                                     </th>
-                                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                    <td class="id" style="display:none;"><a href="javascript:void(0);"
+                                                                                            class="fw-medium link-primary">#VZ2101</a>
+                                                    </td>
                                                     <td class="category_name">{{ $category->category_name }}</td>
                                                     <td class="description">{{ $category->description }}</td>
                                                     <td class="date">{{ $category->created_at }}</td>
@@ -138,9 +146,9 @@
                                                                     Edit
                                                                 </button>
                                                             </div>
-{{--                                                            <div class="remove">--}}
-{{--                                                                <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal">Remove</button>--}}
-{{--                                                            </div>--}}
+                                                            {{--                                                            <div class="remove">--}}
+                                                            {{--                                                                <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal">Remove</button>--}}
+                                                            {{--                                                            </div>--}}
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -148,11 +156,12 @@
                                                 <tr>
                                                     <td colspan="7">
                                                         <div class="noresult text-center">
-                                                            <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
-                                                                       colors="primary:#121331,secondary:#08a88a" style="width:75px;height:75px">
+                                                            <lord-icon src="https://cdn.lordicon.com/msoeawqm.json"
+                                                                       trigger="loop"
+                                                                       colors="primary:#121331,secondary:#08a88a"
+                                                                       style="width:75px;height:75px">
                                                             </lord-icon>
                                                             <h5 class="mt-2">Sorry! No Result Found</h5>
-                                                            <p class="text-muted mb-0">We've searched more than 150+ Orders but we did not find any orders matching your search.</p>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -178,51 +187,6 @@
                 <!-- end row -->
 
 
-
-{{--                <div class="modal fade" id="showModal" tabindex="-1" aria-labelledby="exampleModalLabel"--}}
-{{--                     aria-hidden="true">--}}
-{{--                    <div class="modal-dialog modal-dialog-centered">--}}
-{{--                        <div class="modal-content">--}}
-{{--                            <div class="modal-header bg-light p-3">--}}
-{{--                                <h5 class="modal-title" id="exampleModalLabel"></h5>--}}
-{{--                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"--}}
-{{--                                        id="close-modal"></button>--}}
-{{--                            </div>--}}
-{{--                            <form method="POST" action="{{ route('createCategory') }}">--}}
-{{--                                @csrf--}}
-{{--                                <div class="modal-body">--}}
-
-{{--                                    <div class="mb-3">--}}
-{{--                                        <label for="category_name-field" class="form-label">Category Name</label>--}}
-{{--                                        <input type="text" id="category_name-field" name="category_name" class="form-control" placeholder="Enter Category Name" required />--}}
-{{--                                    </div>--}}
-
-{{--                                    <div class="mb-3">--}}
-{{--                                        <label for="description-field" class="form-label">Description</label>--}}
-{{--                                        <input type="text" id="description-field" name="description" class="form-control" placeholder="Enter description" required />--}}
-{{--                                    </div>--}}
-
-{{--                                    <div>--}}
-{{--                                        <label for="category_status-field" class="form-label">Category Status</label>--}}
-{{--                                        <select class="form-control" data-trigger name="category_status" id="category_status-field" >--}}
-{{--                                            <option value="">Status</option>--}}
-{{--                                            <option value="Active">Active</option>--}}
-{{--                                            <option value="InActive">InActive</option>--}}
-{{--                                        </select>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="modal-footer">--}}
-{{--                                    <div class="hstack gap-2 justify-content-end">--}}
-{{--                                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>--}}
-{{--                                        <button type="submit" class="btn btn-success" id="add-btn">Add Category</button>--}}
-{{--                                        <button type="button" class="btn btn-success" id="edit-btn">Update</button>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </form>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
                 <div class="modal fade" id="showModal" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
@@ -237,39 +201,49 @@
                                 <div class="modal-body">
                                     <div class="mb-3">
                                         <label class="form-label">Category Name</label>
-                                        <input type="text" id="category_name-field" name="category_name" class="form-control" required />
+                                        <input type="text" id="category_name-field" name="category_name"
+                                               class="form-control" required/>
                                     </div>
 
                                     <div class="mb-3">
                                         <label class="form-label">Description</label>
-                                        <input type="text" id="description-field" name="description" class="form-control" required />
+                                        <input type="text" id="description-field" name="description"
+                                               class="form-control" required/>
                                     </div>
 
                                     <div class="mb-3">
                                         <label class="form-label">Category Status</label>
-                                        <select class="form-control" name="category_status" id="category_status-field" required>
-                                            <option value="">Select Status</option>
+                                        {{--                                        <select class="form-control" name="category_status" id="category_status-field" required>--}}
+                                        {{--                                            <option value="">Select Status</option>--}}
 
-                                            <!-- Conditionally show only the opposite status and pre-select the current status -->
-                                            @if ($category->category_status == 'active')
-                                                <option value="Active" {{ old('category_status', $category->category_status) == 'active' ? 'selected' : '' }}>Active</option>
-                                                <option value="Inactive" {{ old('category_status', $category->category_status) == 'inactive' ? 'selected' : '' }}>Inactive</option>
-                                            @elseif ($category->category_status == 'inactive')
-                                                <option value="Inactive" {{ old('category_status', $category->category_status) == 'inactive' ? 'selected' : '' }}>Inactive</option>
-                                                <option value="Active" {{ old('category_status', $category->category_status) == 'active' ? 'selected' : '' }}>Active</option>
-                                            @endif
+                                        {{--                                            <!-- Conditionally show only the opposite status and pre-select the current status -->--}}
+                                        {{--                                            @if ($category->category_status == 'active')--}}
+                                        {{--                                                <option value="Active" {{ old('category_status', $category->category_status) == 'active' ? 'selected' : '' }}>Active</option>--}}
+                                        {{--                                                <option value="Inactive" {{ old('category_status', $category->category_status) == 'inactive' ? 'selected' : '' }}>Inactive</option>--}}
+                                        {{--                                            @elseif ($category->category_status == 'inactive')--}}
+                                        {{--                                                <option value="Inactive" {{ old('category_status', $category->category_status) == 'inactive' ? 'selected' : '' }}>Inactive</option>--}}
+                                        {{--                                                <option value="Active" {{ old('category_status', $category->category_status) == 'active' ? 'selected' : '' }}>Active</option>--}}
+                                        {{--                                            @endif--}}
+                                        {{--                                        </select>--}}
+
+                                        <select class="form-control" name="category_status" id="category_status-field"
+                                                required>
+                                            <option value="">Select Status</option>
+                                            <option value="active">Active</option>
+                                            <option value="inactive">Inactive</option>
                                         </select>
+
                                     </div>
 
 
-
-
-
-
                                     <div class="modal-footer">
-                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-success" id="save-btn">Add Category</button>
-                                    <button type="submit" class="btn btn-success" id="update-btn" style="display: none;">Update</button>
+                                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close
+                                        </button>
+                                        <button type="submit" class="btn btn-success" id="save-btn">Add Category
+                                        </button>
+                                        <button type="submit" class="btn btn-success" id="update-btn"
+                                                style="display: none;">Update
+                                        </button>
                                     </div>
                                 </div>
                             </form>
@@ -283,20 +257,26 @@
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                        id="btn-close"></button>
                             </div>
                             <div class="modal-body">
                                 <div class="mt-2 text-center">
                                     <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop"
-                                               colors="primary:#f7b84b,secondary:#f06548" style="width:100px;height:100px"></lord-icon>
+                                               colors="primary:#f7b84b,secondary:#f06548"
+                                               style="width:100px;height:100px"></lord-icon>
                                     <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
                                         <h4>Are you Sure ?</h4>
-                                        <p class="text-muted mx-4 mb-0">Are you Sure You want to Remove this Record ?</p>
+                                        <p class="text-muted mx-4 mb-0">Are you Sure You want to Remove this Record
+                                            ?</p>
                                     </div>
                                 </div>
                                 <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
-                                    <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn w-sm btn-danger " id="delete-record">Yes, Delete It!</button>
+                                    <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal">Close
+                                    </button>
+                                    <button type="button" class="btn w-sm btn-danger " id="delete-record">Yes, Delete
+                                        It!
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -313,7 +293,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-6">
-                        <script>document.write(new Date().getFullYear())</script> © Velzon.
+                        <script>document.write(new Date().getFullYear())</script>
+                        © Velzon.
                     </div>
                     <div class="col-sm-6">
                         <div class="text-sm-end d-none d-sm-block">
@@ -328,11 +309,11 @@
 
     <script>
 
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             let editButtons = document.querySelectorAll('.edit-item-btn');
 
             editButtons.forEach(button => {
-                button.addEventListener('click', function() {
+                button.addEventListener('click', function () {
                     // Get category data from the button's data attributes
                     let categoryId = this.getAttribute('data-id');
                     let categoryName = this.getAttribute('data-name');
@@ -384,9 +365,6 @@
         });
 
 
-
-
     </script>
-
 
 @endsection

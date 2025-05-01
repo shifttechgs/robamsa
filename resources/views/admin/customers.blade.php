@@ -46,13 +46,13 @@
                                             {{--                                                </div>--}}
                                             {{--                                            </div>--}}
                                             <div class="d-flex gap-2">
-                                                <div class="edit">
-                                                    <button class="btn btn-sm btn-success edit-item-btn"
-                                                            data-bs-toggle="modal" data-bs-target="#showModal"><i class="ri-add-line align-bottom me-1"></i>Import</button>
-                                                </div>
-                                                <div class="remove">
-                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><i class="ri-add-line align-bottom me-1"></i>Export</button>
-                                                </div>
+{{--                                                <div class="edit">--}}
+{{--                                                    <button class="btn btn-sm btn-success edit-item-btn"--}}
+{{--                                                            data-bs-toggle="modal" data-bs-target="#showModal"><i class="ri-add-line align-bottom me-1"></i>Import</button>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="remove">--}}
+{{--                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><i class="ri-add-line align-bottom me-1"></i>Export</button>--}}
+{{--                                                </div>--}}
                                                 <div class="remove">
                                                     <button class="btn btn-sm btn-primary remove-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><i class="ri-add-line align-bottom me-1"></i>New Customer</button>
                                                 </div>
@@ -97,7 +97,7 @@
                                                 <th class="sort" data-sort="date_created">Date Joined</th>
 
                                                 <th class="sort" data-sort="status">Status</th>
-                                                <th class="sort" data-sort="action">Action</th>
+{{--                                                <th class="sort" data-sort="action">Action</th>--}}
                                             </tr>
                                             </thead>
                                             <tbody class="list form-check-all">
@@ -114,17 +114,17 @@
 
                                                 <td class="date">06 Apr, 2021</td>
                                                 <td class="status"><span class="badge badge-soft-success text-uppercase">Active</span></td>
-                                                <td>
-                                                    <div class="d-flex gap-2">
-                                                        <div class="edit">
-                                                            <button class="btn btn-sm btn-success edit-item-btn"
-                                                                    data-bs-toggle="modal" data-bs-target="#showModal">Edit</button>
-                                                        </div>
-                                                        <div class="remove">
-                                                            <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal">Remove</button>
-                                                        </div>
-                                                    </div>
-                                                </td>
+{{--                                                <td>--}}
+{{--                                                    <div class="d-flex gap-2">--}}
+{{--                                                        <div class="edit">--}}
+{{--                                                            <button class="btn btn-sm btn-success edit-item-btn"--}}
+{{--                                                                    data-bs-toggle="modal" data-bs-target="#showModal">Edit</button>--}}
+{{--                                                        </div>--}}
+{{--                                                        <div class="remove">--}}
+{{--                                                            <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal">Remove</button>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </td>--}}
                                             </tr>
 
                                             </tbody>
