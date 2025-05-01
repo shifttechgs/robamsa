@@ -276,65 +276,6 @@ public function updateCart(Request $request){
      */
     public function store(Request $request): RedirectResponse
     {
-    // dd($request);
-
-
-        // Validate the incoming data
-        $validated = $request->validate([
-            'product_name' => 'required',
-            'description' => 'required',
-            'price' => 'required',
-            'discount' => 'required',
-            'stock_status' => 'required',
-           'product_status' => 'required',
-           'category_id' => 'required',
-            'image_code' => 'required',
-        ]);
-
-        // Generate a unique product ID
-        $productId = 'PROD-' . time() . rand(100, 999);
-
-
-        // Handle image upload
-        if ($request->hasFile('image_code')) {
-            // Get the uploaded image
-            $image = $request->file('image_code');
-
-            // Generate a unique name for the image
-            $imageName = time() . '_' . $image->getClientOriginalName();
-
-            // Store the image in the 'public/images' directory
-            $imagePath = $image->storeAs('images', $imageName, 'public');
-        } else {
-            $imagePath = null; // If no image is uploaded, set the path to null
-        }
-
-        // Create a new product
-        $productData = new Product([
-            'product_id' => $productId,
-            'product_name' => $validated['product_name'],
-            'description' => $validated['description'],
-            'price' => $validated['price'],
-            'stock_status' => $validated['stock_status'],
-            'product_status' => $validated['product_status'],
-            'category_id' => $validated['category_id'],
-            'image_code' => $imagePath, // Save the image path
-            'user_id' => Auth::id(), // Attach authenticated user ID
-        ]);
-       // dd($productData);
-        // Save the product to the database
-        if ($productData->save()) {
-            // Redirect to the catalog page with a success message
-            return redirect()->route('catalogues.index')->with('success', 'Product added successfully.');
-        } else {
-            // If the product cannot be saved, return an error message
-            return redirect()->back()->with('error', 'Failed! Unable to create product.');
-        }
-    }
-
-    public function update(Request $request, $id)
-    {
-        // Validate the incoming data
         $validated = $request->validate([
             'product_name' => 'required',
             'description' => 'required',
@@ -343,49 +284,73 @@ public function updateCart(Request $request){
             'stock_status' => 'required',
             'product_status' => 'required',
             'category_id' => 'required',
-            'image_code' => 'required',
+            'image_code' => 'required|image',
         ]);
 
-        // Find the product by ID (not category)
-        $product = Product::findOrFail($id); // Assuming you are updating a product, not category
+        $productId = 'PROD-' . time() . rand(100, 999);
 
-        // Handle the image upload if necessary
-//        if ($request->hasFile('image_code')) {
-//            // Store the image and get its path
-//            $imagePath = $request->file('image_code')->store('images', 'public');
-//        } else {
-//            $imagePath = $product->image_code; // Keep the old image if no new one is uploaded
-//        }
-
-        // Convert image to Base64
+        // Handle image upload
+        $imageName = null;
         if ($request->hasFile('image_code')) {
-            // Get the uploaded image
             $image = $request->file('image_code');
-
-            // Generate a unique name for the image
             $imageName = time() . '_' . $image->getClientOriginalName();
-
-            // Store the image in the 'public/images' directory
-            $imagePath = $image->storeAs('images', $imageName, 'public');
-        } else {
-            $imagePath = null; // If no image is uploaded, set the path to null
+            $image->storeAs('images', $imageName, 'public'); // Save only name
         }
 
-       // dd($base64Image);
-        // Update the product details
+        $product = new Product([
+            'product_id' => $productId,
+            'product_name' => $validated['product_name'],
+            'description' => $validated['description'],
+            'price' => $validated['price'],
+            'discount' => $validated['discount'],
+            'stock_status' => $validated['stock_status'],
+            'product_status' => $validated['product_status'],
+            'category_id' => $validated['category_id'],
+            'image_code' => $imageName, // Only the image name saved
+            'user_id' => Auth::id(),
+        ]);
+
+        if ($product->save()) {
+            return redirect()->route('catalogues.index')->with('success', 'Product added successfully.');
+        }
+
+        return redirect()->back()->with('error', 'Failed! Unable to create product.');
+    }
+
+    public function update(Request $request, $id)
+    {
+        $validated = $request->validate([
+            'product_name' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'discount' => 'required',
+            'stock_status' => 'required',
+            'product_status' => 'required',
+            'category_id' => 'required',
+            'image_code' => 'sometimes|image',
+        ]);
+
+        $product = Product::findOrFail($id);
+
+        $imageName = $product->image_code; // Default to existing image
+        if ($request->hasFile('image_code')) {
+            $image = $request->file('image_code');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->storeAs('images', $imageName, 'public');
+        }
+
         $product->update([
             'product_name' => $validated['product_name'],
             'description' => $validated['description'],
             'price' => $validated['price'],
-            'discount' => $validated['discount'], // You missed this field
+            'discount' => $validated['discount'],
             'stock_status' => $validated['stock_status'],
             'product_status' => $validated['product_status'],
             'category_id' => $validated['category_id'],
-            'image_code' => $imagePath, // Save the image path
+            'image_code' => $imageName, // Only the image name saved
             'user_id' => Auth::id(),
         ]);
 
-        // Redirect with success message
         return redirect()->route('catalogues.index')->with('success', 'Product updated successfully!');
     }
 
