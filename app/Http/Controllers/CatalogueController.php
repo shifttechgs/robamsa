@@ -359,14 +359,19 @@ public function updateCart(Request $request){
 
         // Convert image to Base64
         if ($request->hasFile('image_code')) {
+            // Get the uploaded image
             $image = $request->file('image_code');
-            $imageData = base64_encode(file_get_contents($image->path()));
-            $imageMimeType = $image->getClientMimeType();
-            $base64Image = "data:$imageMimeType;base64,$imageData";
+
+            // Generate a unique name for the image
+            $imageName = time() . '_' . $image->getClientOriginalName();
+
+            // Store the image in the 'public/images' directory
+            $imagePath = $image->storeAs('images', $imageName, 'public');
         } else {
-            $base64Image = null; // If no image is uploaded, set it to null
+            $imagePath = null; // If no image is uploaded, set the path to null
         }
-dd($base64Image);
+
+       // dd($base64Image);
         // Update the product details
         $product->update([
             'product_name' => $validated['product_name'],
@@ -376,7 +381,7 @@ dd($base64Image);
             'stock_status' => $validated['stock_status'],
             'product_status' => $validated['product_status'],
             'category_id' => $validated['category_id'],
-            'image_code' => $base64Image, // Save the image path
+            'image_code' => $imagePath, // Save the image path
             'user_id' => Auth::id(),
         ]);
 
