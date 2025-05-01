@@ -18,7 +18,9 @@ return new class extends Migration
             $table->enum('category_status', ['active', 'inactive'])->default('active');
 
             // Foreign Key for Users (if needed)
-            $table->string('user_id')->nullable();
+//            $table->string('user_id')->nullable();
+//            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
 
             $table->timestamps();
