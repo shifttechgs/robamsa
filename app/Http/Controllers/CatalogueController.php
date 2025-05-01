@@ -386,7 +386,7 @@ public function updateCart(Request $request){
         ]);
 
         // Redirect with success message
-        return redirect()->route('products.index')->with('success', 'Product updated successfully!');
+        return redirect()->route('catalogues.index')->with('success', 'Product updated successfully!');
     }
 
 }
