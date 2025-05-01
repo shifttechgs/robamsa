@@ -12,14 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('order_number')->unique();
-            $table->decimal('total_amount', 10, 2);
-            $table->string('order_status')->default('pending'); // Now a string instead of enum
-            $table->string('payment_status')->default('pending'); // Now a string instead of enum
-            $table->text('delivery_address');
-            $table->timestamps();
+            $table->id(); // Primary key for the orders table
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Foreign key referencing users table
+            $table->string('order_number')->unique(); // Unique order number
+            $table->decimal('total_amount', 10, 2); // Total amount for the order
+            $table->string('order_status')->default('pending'); // Default status for the order
+            $table->string('payment_status')->default('pending'); // Default status for payment
+            $table->text('delivery_address'); // Address where the order will be delivered
+            $table->timestamps(); // Timestamps for created_at and updated_at
         });
     }
 
