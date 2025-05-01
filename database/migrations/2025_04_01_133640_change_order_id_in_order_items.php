@@ -12,7 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('order_items', function (Blueprint $table) {
-            $table->string('order_id')->change();
+            $table->unsignedBigInteger('order_id')->change();  // Ensure it is the same as the 'id' in 'orders'
+        });
+        // Recreate foreign key constraint after changing the column type
+        Schema::table('order_items', function (Blueprint $table) {
+            $table->dropForeign(['order_id']);  // Drop the old foreign key
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
         });
     }
 
