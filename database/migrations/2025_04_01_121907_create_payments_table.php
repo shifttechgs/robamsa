@@ -25,7 +25,7 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id(); // Primary key for the payments table
             $table->unsignedBigInteger('order_id'); // Explicitly define as unsignedBigInteger
-            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade'); // Define foreign key constraint
+            $table->foreign('order_id')->references('order_number')->on('orders')->onDelete('cascade'); // Define foreign key constraint
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Foreign key referencing users table
             $table->string('payment_method');
             $table->decimal('amount', 10, 2);
