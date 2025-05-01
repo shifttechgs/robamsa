@@ -53,9 +53,9 @@
 {{--                                                <div class="remove">--}}
 {{--                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><i class="ri-add-line align-bottom me-1"></i>Export</button>--}}
 {{--                                                </div>--}}
-                                                <div class="remove">
-                                                    <button class="btn btn-sm btn-primary remove-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><i class="ri-add-line align-bottom me-1"></i>New Customer</button>
-                                                </div>
+{{--                                                <div class="remove">--}}
+{{--                                                    <button class="btn btn-sm btn-primary remove-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><i class="ri-add-line align-bottom me-1"></i>New Customer</button>--}}
+{{--                                                </div>--}}
                                             </div>
 
                                         </div>
@@ -96,11 +96,12 @@
                                                 <th class="sort" data-sort="description">Email</th>
                                                 <th class="sort" data-sort="date_created">Date Joined</th>
 
-                                                <th class="sort" data-sort="status">Status</th>
+{{--                                                <th class="sort" data-sort="status">Status</th>--}}
 {{--                                                <th class="sort" data-sort="action">Action</th>--}}
                                             </tr>
                                             </thead>
                                             <tbody class="list form-check-all">
+                                            @foreach($customers as $customer)
                                             <tr>
                                                 <th scope="row">
                                                     <div class="form-check">
@@ -108,12 +109,14 @@
                                                     </div>
                                                 </th>
                                                 <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
-                                                <td class="customer_name">Prosper Tinarwo</td>
-                                                <td class="description">+27814303023</td>
-                                                <td class="description">shifttechgs1@gmail.com</td>
+                                                <td class="customer_name">{{ $customer->name }}</td>
+                                                <td class="description">{{ $customer->phone }}</td>
+                                                <td class="description">{{ $customer->email }}</td>
 
-                                                <td class="date">06 Apr, 2021</td>
-                                                <td class="status"><span class="badge badge-soft-success text-uppercase">Active</span></td>
+                                                <td class="description">{{ $customer->created_at }}</td>
+
+
+{{--                                                <td class="status"><span class="badge badge-soft-success text-uppercase">Active</span></td>--}}
 {{--                                                <td>--}}
 {{--                                                    <div class="d-flex gap-2">--}}
 {{--                                                        <div class="edit">--}}
@@ -126,7 +129,7 @@
 {{--                                                    </div>--}}
 {{--                                                </td>--}}
                                             </tr>
-
+                                            @endforeach
                                             </tbody>
                                         </table>
                                         <div class="noresult" style="display: none">

@@ -653,7 +653,7 @@
                     </button>
                     <div class="dropdown-menu dropdown-menu-end">
                         <!-- item-->
-                        <h6 class="dropdown-header">Welcome Anna!</h6>
+                        <h6 class="dropdown-header">Welcome {{ Auth::user()->name }}!</h6>
 {{--                        <a class="dropdown-item" href="pages-profile.html"><i--}}
 {{--                                class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span--}}
 {{--                                class="align-middle">Profile</span></a>--}}
@@ -788,21 +788,21 @@
                     </div>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="#sidebarApps" data-bs-toggle="collapse"
-                       role="button" aria-expanded="false" aria-controls="sidebarApps"  >
-                        <i class="mdi mdi-account-box-multiple-outline"></i> <span data-key="t-apps">Users</span>
-                    </a>
-                    <div class="collapse menu-dropdown" id="sidebarApps">
-                        <ul class="nav nav-sm flex-column">
-                            <li class="nav-item">
-                                <a  class="nav-link" data-key="t-calendar"> Manage Users </a>
-                            </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link menu-link" href="#sidebarApps" data-bs-toggle="collapse"--}}
+{{--                       role="button" aria-expanded="false" aria-controls="sidebarApps"  >--}}
+{{--                        <i class="mdi mdi-account-box-multiple-outline"></i> <span data-key="t-apps">Users</span>--}}
+{{--                    </a>--}}
+{{--                    <div class="collapse menu-dropdown" id="sidebarApps">--}}
+{{--                        <ul class="nav nav-sm flex-column">--}}
+{{--                            <li class="nav-item">--}}
+{{--                                <a  class="nav-link" data-key="t-calendar"> Manage Users </a>--}}
+{{--                            </li>--}}
 
 
-                        </ul>
-                    </div>
-                </li>
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </li>--}}
 
 
 
