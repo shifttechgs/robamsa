@@ -164,8 +164,9 @@
 {{--                                        @else--}}
 {{--                                            <img src="{{ asset('assets/images/furniture/1.png') }}" class="img-fluid blur-up lazyload" alt="Default Image">--}}
 {{--                                        @endif--}}
-                                        <img src="../assets/images/vegetable/product/1.png"
-                                             class="img-fluid blur-up lazyloaded checkout-image" alt="">
+                                        <img src="{{ asset('storage/images/' . $item['image']) }}"
+                                             class="img-fluid"
+                                             alt="{{ $item->name ?? 'Product Image' }}">
                                         <h4>{{ $item['name'] }} <span>X ({{ $item['quantity'] }})</span></h4>
                                         <h4 class="price">R {{ $item['price'] * $item['quantity'] }}</h4>
                                     </li>
