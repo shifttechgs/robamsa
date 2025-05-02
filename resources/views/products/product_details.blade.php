@@ -625,7 +625,7 @@
                                 <div class="vendor-list">
                                     <ul>
                                         <li>
-                                            <h3 class="theme-color price">${{ $product->price }} </h3>
+                                            <h3 class="theme-color price">R{{ $product->price }} </h3>
                                         </li>
 
 
