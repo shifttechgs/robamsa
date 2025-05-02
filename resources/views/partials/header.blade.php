@@ -229,7 +229,7 @@
                                                             <a>
                                                                 <h5>{{ $products['name'] }}</h5>
                                                             </a>
-                                                            <h6><span>{{$products['quantity']}} x</span> ${{ $products['price'] }}</h6>
+                                                            <h6><span>{{$products['quantity']}} x</span> R{{ $products['price'] }}</h6>
 {{--                                                            <button class="remove-from-cart" data-id="{{ $id }}">--}}
 {{--                                                                <i data-feather="trash"></i>--}}
 {{--                                                            </button>--}}
