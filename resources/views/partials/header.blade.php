@@ -257,7 +257,7 @@
 
                                                 @endforeach
                                                 <h5>Total :</h5>
-                                                <h4 class="theme-color fw-bold">$ {{ $total }}</h4>
+                                                <h4 class="theme-color fw-bold">R {{ $total }}</h4>
                                             </div>
 
                                             <div class="button-group">
