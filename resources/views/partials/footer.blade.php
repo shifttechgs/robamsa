@@ -6,7 +6,7 @@
                     <a href="index.html" class="foot-logo theme-logo">
                         <img src="../assets/images/logo/much_saver.png" class="img-fluid blur-up lazyload" alt="">
                     </a>
-                    <p class="information-text information-text-2">RobamSA is your one-stop online vape shop, offering the latest vape devices, premium e-liquids, and accessories at unbeatable prices.</p>
+                    <p class="information-text information-text-2">Much Saver is your one-stop online vape shop, offering the latest vape devices, premium e-liquids, and accessories at unbeatable prices.</p>
                     <ul class="social-icon">
                         <li class="light-bg">
                             <a href="https://www.facebook.com/" class="footer-link-color">
@@ -30,14 +30,14 @@
 
                 <div class="col-xxl-2 col-xl-4 col-sm-6">
                     <div class="footer-title">
-                        <h4 class="text-white">About RobamSa</h4>
+                        <h4 class="text-white">About Much Saver</h4>
                     </div>
                     <ul class="footer-list footer-contact footer-list-light">
                         <li>
-                            <a href="{{ route('about_us.index') }}" class="light-text">Our Company</a>
+                            <a href="" class="light-text">Our Company</a>
                         </li>
                         <li>
-                            <a href="blog-list.html" class="light-text"> Blog</a>
+                            <a href="" class="light-text"> Blog</a>
                         </li>
                     </ul>
                 </div>
@@ -48,11 +48,11 @@
                     </div>
                     <ul class="footer-list footer-list-light footer-contact">
                         <li>
-                            <a href="order-success.html" class="light-text">Delivery Information</a>
+                            <a href="" class="light-text">Delivery Information</a>
                         </li>
 
                         <li>
-                            <a href="order-tracking.html" class="light-text">Terms & Conditions</a>
+                            <a href="" class="light-text">Terms & Conditions</a>
                         </li>
 
                     </ul>
@@ -64,11 +64,11 @@
                     </div>
                     <ul class="footer-list footer-list-light footer-contact">
                         <li>
-                            <a href="{{ route('contact.index') }}" class="light-text">Contact Us</a>
+                            <a href="" class="light-text">Contact Us</a>
                         </li>
 
                         <li>
-                            <a href="{{ route('faq.index') }}" class="light-text">FAQ</a>
+                            <a href="" class="light-text">FAQ</a>
                         </li>
 
                     </ul>
@@ -83,7 +83,7 @@
                             <a href="javascript:void(0)" class="light-text">
                                 <div class="inform-box flex-start-box">
                                     <i data-feather="map-pin"></i>
-                                    <p>RobamSa Demo Store, Demo store Cape Town 345 - 659</p>
+                                    <p>Much Saver, Demo store Cape Town 345 - 659</p>
                                 </div>
                             </a>
                         </li>
@@ -92,7 +92,7 @@
                             <a href="javascript:void(0)" class="light-text">
                                 <div class="inform-box">
                                     <i data-feather="phone"></i>
-                                    <p>Call us: 0814303024</p>
+                                    <p>Call us: +27 728259774</p>
                                 </div>
                             </a>
                         </li>
@@ -101,7 +101,7 @@
                             <a href="javascript:void(0)" class="light-text">
                                 <div class="inform-box">
                                     <i data-feather="mail"></i>
-                                    <p>Email Us: Support@shifttechgs.com</p>
+                                    <p>Email Us: support@muchsaver.com</p>
                                 </div>
                             </a>
                         </li>
@@ -114,7 +114,7 @@
 
         <div class="sub-footer section-small-space">
             <div class="reserve">
-                <h6 class="text-content" style="color: white"> <script>document.write(new Date().getFullYear())</script> ©  Robam SA Trading Powered By ShiftTech</h6>
+                <h6 class="text-content" style="color: white"> <script>document.write(new Date().getFullYear())</script> ©  Much Saver Powered By ShiftTech</h6>
             </div>
 
             <div class="payment">

@@ -55,7 +55,7 @@
                         <div class="notification-slider">
                             <div>
                                 <div class="timer-notification">
-                                    <h6><strong class="me-1">Welcome to RobamSA!</strong>Something you love is now on sale!.<strong class="ms-1"><a onclick="location.href = '{{ route('shopProducts') }}';" class="text-white">Buy Now
+                                    <h6><strong class="me-1">Welcome Much Saver</strong>Something you love is now on sale!.<strong class="ms-1"><a onclick="location.href = '{{ route('shopProducts') }}';" class="text-white">Buy Now
                                                 !</a>
                                         </strong>
 
