@@ -1,10 +1,10 @@
-<footer class="section-t-space footer-section-2 footer-color-3">
+<footer class="section-t-space footer-section-2 " style=" background-color: #1a3b45;">
     <div class="container-fluid-lg">
         <div class="main-footer">
             <div class="row g-md-4 gy-sm-5">
                 <div class="col-xxl-3 col-xl-4 col-sm-6">
                     <a href="index.html" class="foot-logo theme-logo">
-                        <img src="../assets/images/logo/vape_shop.png" class="img-fluid blur-up lazyload" alt="">
+                        <img src="../assets/images/logo/much_saver.png" class="img-fluid blur-up lazyload" alt="">
                     </a>
                     <p class="information-text information-text-2">RobamSA is your one-stop online vape shop, offering the latest vape devices, premium e-liquids, and accessories at unbeatable prices.</p>
                     <ul class="social-icon">

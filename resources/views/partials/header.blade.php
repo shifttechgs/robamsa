@@ -2,7 +2,7 @@
 <div class="mobile-menu d-md-none d-block mobile-cart">
     <ul>
         <li class="active">
-            <a href="index.html">
+            <a href="">
                 <i class="iconly-Home icli"></i>
                 <span>Home</span>
             </a>
@@ -16,21 +16,21 @@
         </li>
 
         <li>
-            <a href="search.html" class="search-box">
+            <a href="" class="search-box">
                 <i class="iconly-Search icli"></i>
                 <span>Search</span>
             </a>
         </li>
 
         <li>
-            <a href="wishlist.html" class="notifi-wishlist">
+            <a href="" class="notifi-wishlist">
                 <i class="iconly-Heart icli"></i>
                 <span>My Wish</span>
             </a>
         </li>
 
         <li>
-            <a href="cart.html">
+            <a href="">
                 <i class="iconly-Bag-2 icli fly-cate"></i>
                 <span>Cart</span>
             </a>
@@ -147,7 +147,7 @@
                                 </span>
                         </button>
                         <a onclick="location.href = '{{ url('/shop') }}';" class="web-logo nav-logo">
-                            <img src="../assets/images/logo/vape_shop.png" class="img-fluid blur-up lazyload" alt="">
+                            <img src="../assets/images/logo/much_saver.png" class="img-fluid blur-up lazyload" alt="">
                         </a>
 
                         <div class="header-nav-middle">

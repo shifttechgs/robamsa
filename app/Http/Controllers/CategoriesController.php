@@ -36,7 +36,7 @@ class CategoriesController extends Controller
         }
 
         // Pagination (10 categories per page)
-        $categories = $query->latest()->paginate(10);
+        $categories = $query->latest()->paginate(40);
 
         return view('admin.categories', compact('categories'));
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\OrderItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -47,8 +48,63 @@ class CatalogueController extends Controller
 
         // Pagination (10 products per page)
         $products = $query->latest()->paginate(10);
+        $sports_training = Product::where('category_id', 12)->get();
+        $promotions = Product::whereNotNull('discount')
+            ->where('discount', '!=', '')
+            ->get();
 
-        return view('welcome', compact('products', 'activeCategories'));
+//        $best_seller = Product::where('category_id', 12)
+//            ->orderByDesc('sales_count')
+//            ->first();
+
+        $topSelling = OrderItem::select('product_id', DB::raw('SUM(quantity) as total_sold'))
+            ->groupBy('product_id')
+            ->orderByDesc('total_sold')
+            ->with('product') // eager load product details
+            ->take(4)        // limit to top 10
+            ->get();
+
+        $topSellingProducts = $topSelling->map(function ($item) {
+            return [
+                'id' => $item->product->id,
+                'product_id' => $item->product->product_id,
+                'name' => $item->product->product_name,
+                'price' => $item->product->price,
+                'discount' => $item->product->discount,
+                'product_status' => $item->product->product_status,
+                'stock_status' => $item->product->stock_status,
+                'description' => $item->product->description,
+                'category_id' => $item->product->category_id,
+                'image' => $item->product->image_code,
+                'total_sold' => $item->total_sold,
+            ];
+        });
+
+        $recentProducts = Product::orderBy('created_at', 'desc')
+            ->take(4)
+            ->get()
+            ->map(function ($product) {
+                return [
+                    'id'     => $product->id,
+                    'product_id'     => $product->product_id,
+                    'name'           => $product->product_name,
+                    'price'          => $product->price,
+                    'discount'       => $product->discount,
+                    'product_status' => $product->product_status,
+                    'stock_status'   => $product->stock_status,
+                    'description'    => $product->description,
+                    'category_id'    => $product->category_id,
+                    'image'          => $product->image_code,
+                    'created_at'     => $product->created_at,
+                ];
+            });
+
+        // dd($topSellingProducts);
+        //$trendingProducts
+        //$recentlyAddedProducts
+        //$topRatedProducts
+
+        return view('welcome', compact('products', 'activeCategories','sports_training','promotions','topSellingProducts','recentProducts'));
     }
 
     public function productDetails($id)

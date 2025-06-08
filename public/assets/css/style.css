@@ -18428,6 +18428,29 @@ section, .section-t-space {
     background: linear-gradient(149.8deg, #f8f8fb 17.21%, #f3f5f9 79.21%)
 }
 
+.custom-control {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(203, 230, 241, 0.41); /* semi-transparent white */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.custom-control:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(0.3); /* dark icon inside light background */
+    width: 20px;
+    height: 20px;
+}
+
 .orange-color {
     color: #ffbc5d !important
 }
@@ -29662,7 +29685,7 @@ body.rtl .menu-label {
     height: 100%;
     top: 0;
     left: 0;
-    background-image: url("../images/vegetable/newsletter/1.jpg");
+    background-image: url("../images/vegetable/newsletter/2.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
