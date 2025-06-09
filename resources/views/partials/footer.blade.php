@@ -101,7 +101,7 @@
                             <a href="javascript:void(0)" class="light-text">
                                 <div class="inform-box">
                                     <i data-feather="mail"></i>
-                                    <p>Email Us: support@muchsaver.com</p>
+                                    <p>Email Us: info@muchsaver.com</p>
                                 </div>
                             </a>
                         </li>

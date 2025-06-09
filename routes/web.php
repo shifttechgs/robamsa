@@ -19,6 +19,19 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/', function () {
 //    return view('welcome');
 //})->name('/');
+Route::get('/migrate',function(){
+    Artisan::call('migrate');
+    dd('migrated!');
+});
+
+Route::get('reboot',function(){
+    Artisan::call('view:clear');
+    Artisan::call('route:clear');
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('key:generate');
+    dd('system rebooted!');}
+);
 
 Route::get('/signin', function () {
     return view('admin/authentication/signin'); // Make sure this view file exists

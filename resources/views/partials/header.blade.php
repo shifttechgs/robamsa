@@ -155,7 +155,7 @@
                                 <div class="middle-box">
                                     <div class="location-box">
                                         <button class="btn location-button" data-bs-toggle="modal"
-                                                data-bs-target="#locationModal">
+                                                data-bs-target="#">
                                         <span class="location-arrow">
                                             <i data-feather="map-pin"></i>
                                         </span>

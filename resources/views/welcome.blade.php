@@ -5,6 +5,30 @@
         <section class="home-section pt-2 ratio_50">
             <div class="container-fluid-lg">
                 <div class="row g-4">
+                    <div class="col-xl-3 col-lg-4 d-lg-inline-block d-none">
+                        <div class="category-menu">
+                            <h3>Shop By Category</h3>
+                            <ul class="border-bottom-0">
+
+
+                                @foreach($activeCategories as $category)
+                                    <li>
+                                        <div class="category-list d-flex justify-content-between align-items-center">
+                                            <h5 class="mb-0">
+                                                <a href="{{ route('shopProducts', ['category' => $category->id]) }}">
+                                                    {{ $category->category_name }}
+                                                </a>
+                                            </h5>
+                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+
+                                        </div>
+                                    </li>
+
+                                @endforeach
+
+                            </ul>
+                        </div>
+                    </div>
                     <div id="homeSlider" class="carousel slide col-xl-9 col-lg-8 ratio_50_1" data-bs-ride="carousel">
                         <div class="carousel-inner">
 
@@ -14,7 +38,7 @@
                                     <img src="../assets/images/furniture/banner/gadgets.jpg" class="d-block w-100 bg-img blur-up lazyload" style="height: 100%; object-fit: cover;" alt="">
                                     <div class="home-detail p-center-left mend-auto w-100">
                                         <div>
-                                            <h6 style="color: white">Exclusive Offer
+                                            <h6 style="color: rgb(1,3,17)">Exclusive Offer
                                                 <span style="color: rgba(250, 45, 57, 0.67);">30% Off</span>
                                             </h6>
                                             <h1 class="text-uppercase poster-1 text-content furniture-heading">
@@ -64,20 +88,7 @@
                     </div>
 
 
-                    <div class="col-xl-3 col-lg-4 d-lg-inline-block d-none">
-                        <div class="home-contain h-100 home-furniture">
-                            <img src="../assets/images/furniture/banner/electronic.webp" class="bg-img blur-up lazyload" alt="">
-                            <div class="home-detail p-top-left home-p-sm feature-detail mend-auto">
-                                <div>
-                                    <h2 class="mt-0 theme-color text-kaushan fw-normal">Exclusive</h2>
-                                    <h3 class="furniture-content">Beats</h3>
-                                    <a onclick="location.href = '{{ route('shopProducts') }}';"
-                                            class="btn btn-animation mt-xxl-4 mt-2 home-button mend-auto">Shop Now <i
-                                            class="fa-solid fa-right-long ms-2 "></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </section>
@@ -384,29 +395,22 @@
 
                     <div class="col-xxl-3 col-xl-4 d-none d-xl-block">
                         <div class="p-sticky">
-                            <div class="category-menu">
-                                <h3>Shop By Category</h3>
-                                <ul class="border-bottom-0">
 
+                            <div class="ratio_156 section-t-space">
+                                <div class="home-contain hover-effect">
+                                    <img src="../assets/images/furniture/banner/electronic.webp" class="bg-img blur-up lazyload" alt="">
 
-                                        @foreach($activeCategories as $category)
-                                        <li>
-                                            <div class="category-list d-flex justify-content-between align-items-center">
-                                                <h5 class="mb-0">
-                                                    <a href="{{ route('shopProducts', ['category' => $category->id]) }}">
-                                                        {{ $category->category_name }}
-                                                    </a>
-                                                </h5>
-                                                <i class="fa fa-angle-right" aria-hidden="true"></i>
-
-                                            </div>
-                                        </li>
-
-                                    @endforeach
-
-                                </ul>
+                                    <div class="home-detail p-top-left home-p-medium">
+                                        <div>
+                                            <h2 class="mt-0 theme-color text-kaushan fw-normal">Exclusive</h2>
+                                            <h3 class="furniture-content">Beats</h3>
+                                            <button onclick="location.href = '{{ route('shopProducts') }}';"
+                                                    class="btn btn-animation mt-xxl-4 mt-2 home-button mend-auto">Shop Now <i
+                                                    class="fa-solid fa-right-long ms-2"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-
                             <div class="ratio_156 section-t-space">
                                 <div class="home-contain hover-effect">
                                     <img src="../assets/images/furniture/banner/3.jpg" class="bg-img blur-up lazyload"
@@ -423,71 +427,7 @@
                                 </div>
                             </div>
 
-{{--                            <div class="section-t-space">--}}
-{{--                                <div class="category-menu">--}}
-{{--                                    <h3>Trending Products</h3>--}}
 
-{{--                                    <ul class="product-list border-0 p-0 d-block">--}}
-{{--                                        <li>--}}
-{{--                                            <div class="offer-product">--}}
-{{--                                                <a href="product-left-thumbnail.html" class="offer-image">--}}
-{{--                                                    <img src="../assets/images/vape/products/producty.png" class="blur-up lazyload"--}}
-{{--                                                         alt="">--}}
-{{--                                                </a>--}}
-
-{{--                                                <div class="offer-detail">--}}
-{{--                                                    <div>--}}
-{{--                                                        <a href="product-left-thumbnail.html" class="text-title">--}}
-{{--                                                            <h6 class="name">Veco Solo Plus</h6>--}}
-{{--                                                        </a>--}}
-{{--                                                        <span>450 G</span>--}}
-{{--                                                        <h6 class="price theme-color">R 70.00</h6>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </li>--}}
-
-{{--                                        <li>--}}
-{{--                                            <div class="offer-product">--}}
-{{--                                                <a href="product-left-thumbnail.html" class="offer-image">--}}
-{{--                                                    <img src="../assets/images/vape/products/producty.png" class="blur-up lazyload"--}}
-{{--                                                         alt="">--}}
-{{--                                                </a>--}}
-
-{{--                                                <div class="offer-detail">--}}
-{{--                                                    <div>--}}
-{{--                                                        <a href="product-left-thumbnail.html" class="text-title">--}}
-{{--                                                            <h6 class="name">LUXE X PODS</h6>--}}
-{{--                                                        </a>--}}
-{{--                                                        <span>450 G</span>--}}
-{{--                                                        <h6 class="price theme-color">R 40.00</h6>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </li>--}}
-
-{{--                                        <li class="mb-0">--}}
-{{--                                            <div class="offer-product">--}}
-{{--                                                <a href="product-left-thumbnail.html" class="offer-image">--}}
-{{--                                                    <img src="../assets/images/vape/products/producty.png" class="blur-up lazyload"--}}
-{{--                                                         alt="">--}}
-{{--                                                </a>--}}
-
-{{--                                                <div class="offer-detail">--}}
-{{--                                                    <div>--}}
-{{--                                                        <a href="product-left-thumbnail.html" class="text-title">--}}
-{{--                                                            <h6 class="name">Orca Solo Plus--}}
-{{--                                                            </h6>--}}
-{{--                                                        </a>--}}
-{{--                                                        <span>1 KG</span>--}}
-{{--                                                        <h6 class="price theme-color">R 80.00</h6>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </li>--}}
-{{--                                    </ul>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
                         </div>
                     </div>
                 </div>
